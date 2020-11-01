@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">HomeLife</string>
+    <string name="textview1">Recepción HomeLife</string>
+    <string name="textview2">Oficina Administración</string>
+    <string name="textview3">Presidente junta de propietarios</string>
+    <string name="textview4">WhatsApp HomeLife</string>
+    <string name="TextRecepcion">+51 14215060</string>
+    <string name="TextAdministracion">+51 14215070</string>
+    <string name="TextJunPro">+51 994018970</string>
+    <string name="TextWhastsApp">+51 986532147</string>
+
+
+</resources>
