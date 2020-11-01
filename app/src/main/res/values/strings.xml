@@ -11,6 +11,7 @@
     <string name="TextWhastsApp">+51 986532147</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_title" />
 
 
 </resources>

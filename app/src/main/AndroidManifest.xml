@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeLife">
-        <activity android:name=".activity_pago"></activity>
-        <activity android:name=".MainRegistrar" />
+        <activity
+            android:name=".MainPago"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainMenu"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainRegistrar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainLogin"
             android:screenOrientation="portrait" />
