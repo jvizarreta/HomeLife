@@ -30,14 +30,13 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/calligraphy"
-        android:textSize="25dp"
         android:text="Fecha del Deposito: "
         android:textColor="@color/homelife"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -45,15 +44,14 @@
         android:id="@+id/etDate"
         android:layout_width="203dp"
         android:layout_height="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/tx_rectangulo"
-        android:ems="10"
-        android:inputType="date"
-        android:focusable="false"
         android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="date"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -61,14 +59,13 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/calligraphy"
         android:text="Numero de Deposito:"
         android:textColor="@color/homelife"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
@@ -76,12 +73,11 @@
         android:id="@+id/txtNumDepo"
         android:layout_width="203dp"
         android:layout_height="30dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/tx_rectangulo"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -96,7 +92,7 @@
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNumDepo" />
 
@@ -104,12 +100,11 @@
         android:id="@+id/editTextNumberDecimal"
         android:layout_width="203dp"
         android:layout_height="30dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/tx_rectangulo"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
