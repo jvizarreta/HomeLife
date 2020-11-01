@@ -28,7 +28,7 @@ public class fragment_menu extends Fragment {
         btnRegistrarpago.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), fragment_Pago.class);
+                Intent intent = new Intent (v.getContext(), activity_pago.class);
                 startActivityForResult(intent, 0);
             }
         });
