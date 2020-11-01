@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeLife">
-        <activity android:name=".MainRegistrar"></activity>
+        <activity android:name=".activity_pago"></activity>
+        <activity android:name=".MainRegistrar" />
         <activity
             android:name=".MainLogin"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
