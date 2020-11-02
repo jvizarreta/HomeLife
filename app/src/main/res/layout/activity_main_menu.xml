@@ -26,9 +26,9 @@
 
     <Button
         android:id="@+id/btnRegistrarPago"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/homelife"
         android:fontFamily="@font/assassin"
         android:onClick="RegistrarPago"
@@ -36,6 +36,45 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEstadoCuenta" />
+
+    <Button
+        android:id="@+id/btnEstadoCuenta"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:text="Estado de cuenta"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnReservas"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:text="Reservas"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarPago" />
+
+    <Button
+        android:id="@+id/btnEmergencias"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:text="Numero de emergencias"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReservas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
