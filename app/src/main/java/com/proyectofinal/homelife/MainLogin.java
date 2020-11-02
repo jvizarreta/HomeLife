@@ -16,7 +16,7 @@ public class MainLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
     }
-
+    //Esta liena hace el cambio de MainLogin a MainMenu
     public void IniciarSesion (View view){
         Intent iniciar = new Intent(this, MainMenu.class);
         startActivity(iniciar);
