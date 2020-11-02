@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeLife">
         <activity
-            android:name=".MainPago"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".MainMenu"
             android:screenOrientation="portrait"/>
         <activity
