@@ -105,6 +105,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/homelife"
         android:fontFamily="@font/assassin"
+        android:onClick="IniciarSesion"
         android:text="Iniciar\nSesion"
         android:textSize="18dp"
         android:textStyle="bold"

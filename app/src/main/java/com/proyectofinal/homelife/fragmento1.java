@@ -15,7 +15,7 @@ public class fragmento1 extends Fragment {
     Button btnLogin, btnRegistrar;
 
     public fragmento1() {
-        // Required empty public constructor
+
     }
 
     @Override

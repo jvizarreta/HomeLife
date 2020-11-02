@@ -31,6 +31,7 @@
         android:layout_marginTop="204dp"
         android:backgroundTint="@color/homelife"
         android:fontFamily="@font/assassin"
+        android:onClick="RegistrarPago"
         android:text="Registrar Pago"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 import java.util.Calendar;
 
-public class activity_pago extends AppCompatActivity {
+public class MainPago extends AppCompatActivity {
     EditText t1;
     private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
     static final int DATE_ID = 0;
@@ -19,7 +19,7 @@ public class activity_pago extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pago);
+        setContentView(R.layout.activity_main_pago);
         sMonthIni = C.get(Calendar.MONTH);
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
         sYearIni = C.get(Calendar.YEAR);
