@@ -31,7 +31,6 @@ public class SqliteHelper extends SQLiteOpenHelper {
                         " departamento TEXT NOT NULL,"+
                         " password TEXT NOT NULL,"+
                         " passwordconfirmacion TEXT NOT NULL);";
-
         db.execSQL(query2);*/
         String query3 =
                 "CREATE TABLE "+ Constantes.NOMBRE_TABLAPAGO+
