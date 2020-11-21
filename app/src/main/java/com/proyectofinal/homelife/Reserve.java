@@ -23,7 +23,7 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
     DatePickerDialog.OnDateSetListener setListener;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_reserve);
 
         Calendar calendar= Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
