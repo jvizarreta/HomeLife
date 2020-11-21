@@ -63,7 +63,7 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
         });
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        Button button=(Button)findViewById(R.id.button);
+        Button button=(Button)findViewById(R.id.btnImg);
         spinner.setOnItemSelectedListener(this);
         List<String> categories = new ArrayList<String>();
         categories.add("Item 1");
