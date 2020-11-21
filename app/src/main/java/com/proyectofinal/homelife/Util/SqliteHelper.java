@@ -3,8 +3,25 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 public class SqliteHelper extends SQLiteOpenHelper {
-    public SqliteHelper(Context context) {
-        super(context, Constantes.NOMBRE_BD, null, Constantes.VERSION);
+    private static SqliteHelper sqliteHelper;
+    private static final String DATABASE_NAME = Constantes.NOMBRE_BD;
+    private static final int DATABASE_VERSION = Constantes.VERSION;
+
+
+    private SqliteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public static SqliteHelper getInstance(Context context) {
+
+        if (sqliteHelper == null) {
+            synchronized (SqliteHelper.class){
+                if (sqliteHelper == null)
+                    sqliteHelper = new SqliteHelper(context);
+            }
+        }
+
+        return sqliteHelper;
     }
     @Override
     public void onCreate(SQLiteDatabase db) {

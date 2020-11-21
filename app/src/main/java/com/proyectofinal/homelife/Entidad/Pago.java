@@ -131,4 +131,5 @@ public class Pago implements Parcelable {
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
     }
+
 }

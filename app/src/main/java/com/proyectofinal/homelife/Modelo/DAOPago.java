@@ -23,7 +23,7 @@ public class DAOPago {
     private final Context context;
 
     public DAOPago(Context context) {
-        this.helper = new SqliteHelper(context);
+        this.helper = SqliteHelper.getInstance(context);
         this.context = context;
     }
     public void openDB(){
@@ -53,7 +53,7 @@ public class DAOPago {
             values.put("concepto",pago.getConcepto());
             values.put("numerodeposito",pago.getNumerodeposito());
             values.put("monto",pago.getMonto());
-            values.put("foto",pago.getFoto());
+            values.put("foto", String.valueOf(pago.getFoto()));
             values.put("idusuario",pago.getIdusuario());
             return db.insert(Constantes.NOMBRE_TABLAPAGO,null,values);
             //return cursor;

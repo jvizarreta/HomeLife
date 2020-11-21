@@ -18,4 +18,9 @@ public class MainMenu extends AppCompatActivity {
         Intent registar = new Intent(this, MainPago.class);
         startActivity(registar);
     }
+
+    public void estado (View view){
+        Intent estado = new Intent(this, EstadoCuenta.class);
+        startActivity(estado);
+    }
 }

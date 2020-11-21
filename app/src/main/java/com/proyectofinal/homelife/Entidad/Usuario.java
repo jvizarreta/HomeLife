@@ -11,6 +11,9 @@ public class Usuario implements Parcelable {
     private String departamento;
     private String password;
     private String passwordconfirmacion;
+    public Usuario() {
+
+    }
 
     public Usuario(int	id,String nrodocumento,String nombres,String apellidos,int celular,String departamento,String password,String passwordconfirmacion) {
         this.id=id;

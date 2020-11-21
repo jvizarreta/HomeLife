@@ -15,7 +15,7 @@ public class DAOReserva {
     private final Context context;
 
     public DAOReserva(Context context) {
-        this.helper = new SqliteHelper(context);
+        this.helper = SqliteHelper.getInstance(context);
         this.context = context;
     }
     public void openDB(){

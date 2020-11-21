@@ -17,6 +17,9 @@
             android:name=".MainRegistrar"
             android:screenOrientation="portrait" />
         <activity
+        android:name=".EstadoCuenta"
+        android:screenOrientation="portrait" />
+        <activity
             android:name=".MainLogin"
             android:screenOrientation="portrait" />
         <activity

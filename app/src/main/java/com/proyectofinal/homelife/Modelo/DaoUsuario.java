@@ -19,7 +19,7 @@ public class DaoUsuario {
     private final Context context;
 
      public DaoUsuario(Context context) {
-        this.helper = new SqliteHelper(context);
+        this.helper = SqliteHelper.getInstance(context);
         this.context = context;
     }
     public void openDB(){
@@ -36,7 +36,7 @@ public class DaoUsuario {
             values.put("departamento",usuario.getDepartamento());
             values.put("password",usuario.getPassword());
             values.put("passwordconfirmacion",usuario.getPasswordconfirmacion());
-                 return db.insert(Constantes.NOMBRE_TABLAUSUARIO,null,values);
+            return db.insert(Constantes.NOMBRE_TABLAUSUARIO,null,values);
             //return cursor;
         }catch (Exception e){
             return 0;

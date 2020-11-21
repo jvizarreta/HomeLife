@@ -19,9 +19,9 @@
                 android:padding="3dip"
                 android:text="Descripcion" />
             <TextView
+                android:id="@+id/txtDescripcion"
                 android:gravity="right"
-                android:padding="3dip"
-                android:text="PagoLuz" />
+                android:padding="3dip" />
         </TableRow>
         <TableRow>
 
@@ -33,7 +33,7 @@
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="Soles" />
+                android:id="@+id/txtMoneda" />
 
 
         </TableRow>
@@ -48,7 +48,7 @@
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="02/11/2020" />
+                android:id="@+id/txtFecha" />
         </TableRow>
 
         <TableRow>
@@ -61,7 +61,7 @@
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="350" />
+                android:id="@+id/txtMonto" />
         </TableRow>
 
         <View
