@@ -1,5 +1,4 @@
 package com.proyectofinal.homelife.Util;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -38,7 +37,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
                         " concepto TEXT NOT NULL,"+
                         " numerodeposito INTEGER NOT NULL,"+
                         " MONTO DECIMAL(18,2) NOT NULL,"+
-                        " img BLOB NOT NULL," +
+                        " foto BLOB NOT NULL," +
                         " idusuario INTEGER NOT NULL," +
                         " FOREIGN KEY ("+ Constantes.FKUSER +") REFERENCES "+ Constantes.NOMBRE_TABLAUSUARIO +"("+Constantes.ID+"));";
 
