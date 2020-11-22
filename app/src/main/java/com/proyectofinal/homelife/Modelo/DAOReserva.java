@@ -1,5 +1,4 @@
 package com.proyectofinal.homelife.Modelo;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,10 +20,7 @@ public class DAOReserva {
     public void openDB(){
         db = helper.getWritableDatabase();
     }
-      /* this.idambiente=idambiente;
-        this.fecha=fecha;
-        this.estadoautoriza=estadoautoriza;
-        this.idusuario=idusuario;*/
+
     public long agregarReserva(Reserva reserva){
         //long cursor;
         try {
