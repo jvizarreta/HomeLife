@@ -38,10 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(MainActivity.this, "Seleccionaste Opción 2", Toast.LENGTH_SHORT).show();
                     abrirFragmento(new fragmento2());
                 }
-                if (item.getItemId() == R.id.menu_3){
-                    //Toast.makeText(MainActivity.this, "Seleccionaste Opción 3", Toast.LENGTH_SHORT).show();
-                    abrirFragmento(new fragmento3());
-                }
+
                 return false;
             }
         });
@@ -49,10 +46,5 @@ public class MainActivity extends AppCompatActivity {
     private void abrirFragmento(Fragment fragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
-
     }
-
-
-
-
 }
