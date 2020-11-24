@@ -24,10 +24,13 @@ public class MainMenu extends AppCompatActivity {
         startActivity(estado);
     }
 
-
-
     public void reserva (View view){
         Intent reserva = new Intent(this,Reserve.class);
         startActivity(reserva);
+    }
+
+    public void LugaresInteres (View view){
+        Intent lugar = new Intent(this, MainMapa.class);
+        startActivity(lugar);
     }
 }

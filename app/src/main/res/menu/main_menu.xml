@@ -11,7 +11,4 @@
         android:title="Contactos"
         android:icon="@drawable/ic_contacto"/>
 
-    <item android:id="@+id/menu_3"
-        android:title="Atras"
-        android:icon="@drawable/ic_back"/>
 </menu>

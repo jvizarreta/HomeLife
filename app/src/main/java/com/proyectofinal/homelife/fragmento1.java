@@ -15,13 +15,11 @@ public class fragmento1 extends Fragment {
     Button btnLogin, btnRegistrar;
 
     public fragmento1() {
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override

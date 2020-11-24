@@ -26,8 +26,7 @@ public class DaoUsuario {
         db = helper.getWritableDatabase();
     }
     public long agregarUsuario(Usuario usuario){
-        //long cursor;
-        try {
+       try {
             ContentValues values = new ContentValues();
             values.put("nrodocumento",usuario.getNrodocumento());
             values.put("nombres",usuario.getNombres());
@@ -42,5 +41,4 @@ public class DaoUsuario {
             return 0;
         }
     }
-
 }
