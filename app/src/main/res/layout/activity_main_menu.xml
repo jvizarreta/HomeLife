@@ -64,10 +64,10 @@
         android:backgroundTint="@color/homelife"
         android:fontFamily="@font/assassin"
         android:onClick="reserva"
-        android:text="Reservas"
+        android:text="Reserva"
         android:textAllCaps="false"
-        android:textStyle="bold"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegistrarPago" />

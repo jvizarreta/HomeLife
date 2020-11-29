@@ -23,7 +23,9 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
     DatePickerDialog.OnDateSetListener setListener;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reserve);
+        setContentView(R.layout.activity_main_reserva);
+
+
 
         Calendar calendar= Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -66,10 +68,10 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
         Button button=(Button)findViewById(R.id.btnImg);
         spinner.setOnItemSelectedListener(this);
         List<String> categories = new ArrayList<String>();
-        categories.add("Item 1");
-        categories.add("Item 2");
-        categories.add("Item 3");
-        categories.add("Item 4");
+        categories.add("Parrilla");
+        categories.add("Cancha de futbol");
+        categories.add("Piscina");
+        categories.add(".");
         categories.add("Item 5");
         categories.add("Item 6");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
@@ -81,6 +83,7 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
         String item = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
-    public void onNothingSelected(AdapterView<?> arg0) {
+    public void onNothingSelected(AdapterView<?> parent) {
+        Toast.makeText(parent.getContext(), "No ha seleccionado", Toast.LENGTH_SHORT).show();
     }
 }

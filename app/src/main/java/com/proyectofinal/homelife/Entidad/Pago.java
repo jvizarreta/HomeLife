@@ -11,22 +11,22 @@ public class Pago implements Parcelable {
     private String concepto;
     private int  numerodeposito;
     private Double   monto;
-    private Blob foto;
+    private Bitmap foto;
     private int idusuario;
 
 
-    public Blob getFoto() {
+    public Bitmap getFoto() {
         return foto;
     }
 
-    public void setFoto(Blob foto) {
+    public void setFoto(Bitmap foto) {
         this.foto = foto;
     }
 
 
 
 
-    public Pago(int	id,String concepto,int numerodeposito,double monto,Blob foto,int idusuario ) {
+    public Pago(int	id,String concepto,int numerodeposito,double monto,Bitmap foto,int idusuario ) {
         this.id=id;
         this.concepto=concepto;
         this.numerodeposito=numerodeposito;
@@ -35,7 +35,7 @@ public class Pago implements Parcelable {
         this.idusuario=idusuario;
     }
 
-    public Pago(String concepto,int numerodeposito,double monto,Blob foto,int idusuario ) {
+    public Pago(String concepto,int numerodeposito,double monto,Bitmap foto,int idusuario ) {
         this.id=id;
         this.concepto=concepto;
         this.numerodeposito=numerodeposito;
