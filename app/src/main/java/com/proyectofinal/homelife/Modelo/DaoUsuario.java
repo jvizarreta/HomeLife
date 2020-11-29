@@ -11,8 +11,15 @@ import android.widget.Toast;
 import com.proyectofinal.homelife.Entidad.Usuario;
 import com.proyectofinal.homelife.Util.Constantes;
 import com.proyectofinal.homelife.Util.SqliteHelper;
+import java.util.ArrayList;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
 public class DaoUsuario {
     SqliteHelper helper;
     SQLiteDatabase db;
@@ -40,5 +47,22 @@ public class DaoUsuario {
         }catch (Exception e){
             return 0;
         }
+    }
+    public Boolean checkusername(String username)
+    {
+        Cursor cursor= db.rawQuery("SELECT * FROM "+ Constantes.NOMBRE_TABLAUSUARIO+" where nrodocumento=?", new String[] {username});
+         if(cursor.getCount()>0)
+            return true;
+        else
+        return false;
+    }
+
+    public Boolean checkpaswrord(String nrodocumento, String password)
+    {
+        Cursor cursor= db.rawQuery("SELECT * FROM "+ Constantes.NOMBRE_TABLAUSUARIO+ " where nrodocumento = ? and password = ?", new String[] {nrodocumento,password});
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
     }
 }

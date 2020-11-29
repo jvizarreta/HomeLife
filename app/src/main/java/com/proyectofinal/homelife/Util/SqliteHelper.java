@@ -8,7 +8,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = Constantes.VERSION;
 
 
-    private SqliteHelper(Context context) {
+    public SqliteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtUsuario1" />
 
     <TextView
-        android:id="@+id/textContraseña"
+        android:id="@+id/textContrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtIngreseUsuario" />
 
     <EditText
-        android:id="@+id/txtIngreseContraseña"
+        android:id="@+id/txtIngreseContrasena"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_margin="20dp"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/textContrasena" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
@@ -105,13 +105,12 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/homelife"
         android:fontFamily="@font/assassin"
-        android:onClick="IniciarSesion"
         android:text="Iniciar\nSesion"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngreseContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngreseContrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
