@@ -17,17 +17,16 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class Reserve extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class Reserve extends AppCompatActivity {
     TextView tvDate;
     EditText etDate;
     DatePickerDialog.OnDateSetListener setListener;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_reserva);
+        setContentView(R.layout.activity_reserve);
 
-
-
-        Calendar calendar= Calendar.getInstance();
+        /* Calendar calendar= Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -47,8 +46,8 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
                 String date= day+"/"+month+"/"+year;
                 tvDate.setText(date);
             }
-        };
-        etDate.setOnClickListener(new View.OnClickListener() {
+        };*/
+       /* etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
@@ -62,28 +61,27 @@ public class Reserve extends AppCompatActivity implements AdapterView.OnItemSele
                 },year,month,day);
                 datePickerDialog.show();
             }
-        });
-
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        Button button=(Button)findViewById(R.id.btnImg);
-        spinner.setOnItemSelectedListener(this);
+        });*/
+       /* final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Button button=(Button)findViewById(R.id.button);
+        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         List<String> categories = new ArrayList<String>();
-        categories.add("Parrilla");
-        categories.add("Cancha de futbol");
-        categories.add("Piscina");
-        categories.add(".");
+        categories.add("Item 1");
+        categories.add("Item 2");
+        categories.add("Item 3");
+        categories.add("Item 4");
         categories.add("Item 5");
         categories.add("Item 6");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
-    }
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    }*/
+   /* public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
-    public void onNothingSelected(AdapterView<?> parent) {
-        Toast.makeText(parent.getContext(), "No ha seleccionado", Toast.LENGTH_SHORT).show();
+    public void onNothingSelected(AdapterView<?> arg0) {
+    }*/
     }
 }
