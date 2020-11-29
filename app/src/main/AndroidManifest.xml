@@ -9,14 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeLife">
-
         <activity
             android:name=".MainMapa"
             android:label="Google Maps"
-            android:parentActivityName=".MainMenu"/>
-
-        <activity
-            android:name=".MainPago" />
+            android:parentActivityName=".MainMenu" />
+        <activity android:name=".MainPago" />
         <activity
             android:name=".MainMenu"
             android:screenOrientation="portrait" />
@@ -30,6 +27,9 @@
             android:name=".MainLogin"
             android:screenOrientation="portrait" />
         <activity
+        android:name=".Reserve"
+        android:screenOrientation="portrait" />
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -39,10 +39,12 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"></meta-data>
-
-        <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyB02i0xuZxwmvUwELQFWre-p2S35LxuGWI"></meta-data>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyB02i0xuZxwmvUwELQFWre-p2S35LxuGWI" />
     </application>
+
 </manifest>
