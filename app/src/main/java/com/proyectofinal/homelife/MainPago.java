@@ -28,8 +28,8 @@ public class MainPago extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pago);
-        sMonthIni = C.get(Calendar.MONTH);
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
+        sMonthIni = C.get(Calendar.MONTH);
         sYearIni = C.get(Calendar.YEAR);
         t1 = (EditText) findViewById(R.id.etDate);
 
@@ -45,7 +45,7 @@ public class MainPago extends AppCompatActivity {
     }
 
     private void colocar_fecha() {
-        t1.setText((mMonthIni + 1) + "-" + mDayIni + "-" + mYearIni+" ");
+        t1.setText(mDayIni + "-" + (mMonthIni + 1) + "-" + mYearIni+" ");
     }
 
 

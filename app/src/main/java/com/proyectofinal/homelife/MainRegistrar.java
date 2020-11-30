@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.proyectofinal.homelife.Entidad.Usuario;
 import com.proyectofinal.homelife.Modelo.DaoUsuario;
 
+import java.util.regex.Pattern;
+
 public class MainRegistrar extends AppCompatActivity {
 
     EditText txtEmail,txtPassword;
