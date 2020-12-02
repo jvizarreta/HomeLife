@@ -138,7 +138,7 @@
         android:id="@+id/imagenId"
         android:layout_width="118dp"
         android:layout_height="134dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_camera"
         tools:layout_editor_absoluteY="555dp" />

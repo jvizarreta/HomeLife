@@ -12,7 +12,9 @@ public class Reserva<DateTime> implements Parcelable {
     private DateTime  fecha;
     private int estadoautoriza;
     private int idusuario;
+ public Reserva(){
 
+ }
     public Reserva(int	id,int idambiente,DateTime fecha,int estadoautoriza,int idusuario) {
         this.id=id;
         this.idambiente=idambiente;

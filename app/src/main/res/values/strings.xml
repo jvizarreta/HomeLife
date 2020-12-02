@@ -22,5 +22,11 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+    <string-array name="ambiente_array">
+        <item>Terraza</item>
+        <item>Parrilla </item>
+        <item>Cancha de Futbol</item>
+        <item>Piscina </item>
+    </string-array>
 
 </resources>
