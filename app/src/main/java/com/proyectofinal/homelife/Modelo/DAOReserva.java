@@ -28,8 +28,8 @@ public class DAOReserva <DateTime> {
     public long agregarReserva(Reserva reserva){
         try {
             ContentValues values = new ContentValues();
-            values.put("idambiente",reserva.getIdambiente());
-            values.put("fecha", (byte[]) reserva.getFecha());
+            values.put("ambiente",reserva.getambiente());
+            values.put("fecha", reserva.getFecha());
             return db.insert(Constantes.NOMBRE_TABLARESERVA,null,values);
             //return cursor;
         }catch (Exception e){

@@ -20,18 +20,23 @@ import com.proyectofinal.homelife.Entidad.Reserva;
 import com.proyectofinal.homelife.Entidad.Usuario;
 import com.proyectofinal.homelife.Modelo.DAOReserva;
 import com.proyectofinal.homelife.Modelo.DaoUsuario;
+import com.proyectofinal.homelife.Util.Constantes;
 import com.proyectofinal.homelife.Util.SqliteHelper;
 
-import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Reserve <DateTime> extends AppCompatActivity  {
     TextView tvDate;
 
-    EditText etDate;
+    EditText et_date;
     Spinner spinner;
     Button btnregis;
+    DAOReserva daoReserva = new DAOReserva(this);
+    String[] ambiente = {"Terraza", "Parrilla"};
+    boolean flag = false;
+    Reserva reserva = null;
 
     DatePickerDialog.OnDateSetListener setListener;
     EditText t2;
@@ -43,14 +48,59 @@ public class Reserve <DateTime> extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve);
 
-        Context context = this;
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            reserva = bundle.getParcelable(Constantes.ARGUM1);
+            flag = bundle.getBoolean(Constantes.ARGUM2);
+        }
+
+        spinner = findViewById(R.id.spinner);
+        et_date = findViewById(R.id.et_date);
+        btnregis = findViewById(R.id.btnregReser);
+
+        daoReserva.openDB();
+        ArrayAdapter<String> adapter;
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ambiente);
+        spinner.setAdapter(adapter);
+
+        if(flag){
+            //ACA ME SALE ERROR
+            et_date.setText(reserva.getFecha());
+
+            if(reserva.getambiente().equals("Terraza"))
+               spinner.setSelection(0);
+           else
+               spinner.setSelection(1);
+           btnregis.setVisibility(View.GONE);
+
+        }
+
+        btnregis.setOnClickListener(view ->{
+            String ambiente;
+            Date fecha;
+            Reserva reserva;
+            long rpta;
+
+            ambiente = spinner.getSelectedItem().toString();
+
+            //IGUAL
+            reserva = new Reserva(ambiente, fecha);
+            rpta = daoReserva.agregarReserva(reserva);
+            if (rpta > 0){
+                Toast.makeText(this, "Se agregó el registro correctamente", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "Ocurrió un error", Toast.LENGTH_SHORT).show();
+            }
+
+            finish();
+
+        });
+
 
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
         sMonthIni = C.get(Calendar.MONTH);
         sYearIni = C.get(Calendar.YEAR);
-        t2 = (EditText) findViewById(R.id.et_date);
-        btnregis = (Button) findViewById(R.id.btnregReser);
-        spinner = (Spinner) findViewById(R.id.spinner);
+
 
         SqliteHelper sqliteHelper = new SqliteHelper(getApplicationContext());
 
@@ -71,22 +121,7 @@ public class Reserve <DateTime> extends AppCompatActivity  {
 
     }
 
-    public void onRegistrarReserva  (View view) {
-        DAOReserva reservaDao = new DAOReserva(getApplicationContext());
-        Log.i("Registro Reserva", "");
-        Reserva reserva = new Reserva();
 
-        reserva.setIdambiente(Integer.valueOf(((Spinner) findViewById(R.id.spinner)).getId()));
-        reserva.setFecha(DateTime.valueOf(((EditText) findViewById(R.id.et_date)).getDrawingTime()));
-        Log.i("Registro Reserva", reserva.toString());
-        if(reserva.getEstadoautoriza().equals(reserva.getEstadoautoriza())) {
-            reservaDao.openDB();
-           reservaDao.agregarReserva(reserva);
-            Toast.makeText(this, "Reserva Registrada con Exito", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "ERROR: No se registro reserva.", Toast.LENGTH_LONG).show();
-        }
-    }
 
 
     private void colocar_fecha() {
