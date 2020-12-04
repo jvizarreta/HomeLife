@@ -64,8 +64,8 @@ public class Reserve <DateTime> extends AppCompatActivity  {
         spinner.setAdapter(adapter);
 
         if(flag){
-            //ACA ME SALE ERROR
-            et_date.setText(reserva.getFecha());
+            //AcC
+            //et_date.setText(reserva.getFecha());
 
             if(reserva.getambiente().equals("Terraza"))
                spinner.setSelection(0);
@@ -83,7 +83,6 @@ public class Reserve <DateTime> extends AppCompatActivity  {
 
             ambiente = spinner.getSelectedItem().toString();
 
-            //IGUAL
             reserva = new Reserva(ambiente, fecha);
             rpta = daoReserva.agregarReserva(reserva);
             if (rpta > 0){

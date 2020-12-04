@@ -8,20 +8,20 @@ import java.util.Date;
 public class Reserva<DateTime> implements Parcelable {
     private int id;
     private String ambiente;
-    private Date  fecha;
+    private DateTime  fecha;
     private int estadoautoriza;
     private int idusuario;
  public Reserva(){
 
  }
-    public Reserva(int	id,String ambiente,Date fecha,int estadoautoriza,int idusuario) {
+    public Reserva(int	id,String ambiente,DateTime fecha,int estadoautoriza,int idusuario) {
         this.id=id;
         this.ambiente=ambiente;
         this.fecha=fecha;
         this.estadoautoriza=estadoautoriza;
         this.idusuario=idusuario;
     }
-    public Reserva(String ambiente,Date fecha,int estadoautoriza,int idusuario) {
+    public Reserva(String ambiente,DateTime fecha,int estadoautoriza,int idusuario) {
         this.ambiente=ambiente;
         this.fecha=fecha;
         this.estadoautoriza=estadoautoriza;
@@ -76,11 +76,11 @@ public class Reserva<DateTime> implements Parcelable {
         this.ambiente = ambiente;
     }
 
-    public byte[] getFecha() {
+    public DateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(DateTime fecha) {
         this.fecha = fecha;
     }
 
