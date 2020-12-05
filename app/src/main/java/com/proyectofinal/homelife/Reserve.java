@@ -75,7 +75,7 @@ public class Reserve <DateTime> extends AppCompatActivity  {
 
         }
 
-        btnregis.setOnClickListener(view ->{
+        /*btnregis.setOnClickListener(view ->{
             String ambiente;
             Date fecha;
             Reserva reserva;
@@ -83,7 +83,7 @@ public class Reserve <DateTime> extends AppCompatActivity  {
 
             ambiente = spinner.getSelectedItem().toString();
 
-            reserva = new Reserva(ambiente, fecha);
+            //reserva = new Reserva(ambiente, fecha);
             rpta = daoReserva.agregarReserva(reserva);
             if (rpta > 0){
                 Toast.makeText(this, "Se agregó el registro correctamente", Toast.LENGTH_SHORT).show();
@@ -93,7 +93,7 @@ public class Reserve <DateTime> extends AppCompatActivity  {
 
             finish();
 
-        });
+        });*/
 
 
         sDayIni = C.get(Calendar.DAY_OF_MONTH);
@@ -114,7 +114,7 @@ public class Reserve <DateTime> extends AppCompatActivity  {
         });
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.ambiente_array, android.R.layout.simple_spinner_item);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.ambiente_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
