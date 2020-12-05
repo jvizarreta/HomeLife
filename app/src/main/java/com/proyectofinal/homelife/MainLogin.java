@@ -1,29 +1,33 @@
 package com.proyectofinal.homelife;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.proyectofinal.homelife.Modelo.DaoUsuario;
-import com.proyectofinal.homelife.Modelo.DaoUsuario;
-import com.proyectofinal.homelife.Util.SqliteHelper;
+import com.proyectofinal.homelife.network.services.LoginService;
 
 public class MainLogin extends AppCompatActivity {
+    MainLogin activity;
+    LoginService servicios;
 EditText txtIngreseUsuario,txtIngreseContrasena;
 Button btnIniciarSesion;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final MainLogin activity = this;
+        servicios = new LoginService(activity);
+
+        String token = servicios.mHomeLifePreference.getToken();
+        if (!token.equals("")) {
+            servicios.verify();
+        }
+
         DaoUsuario userDao = new DaoUsuario(getApplicationContext());
         setContentView(R.layout.activity_main_login);
         txtIngreseUsuario =(EditText) findViewById(R.id.txtIngreseUsuario);
@@ -39,6 +43,8 @@ Button btnIniciarSesion;
                 if(user.equals("")||password.equals(""))
                     Toast.makeText(MainLogin.this,"escriba sus credenciales correctas",Toast.LENGTH_SHORT).show();
                 else {
+                    servicios.login(user, password);
+                    /*
                     userDao.openDB();
                     Boolean checkuser=userDao.checkpaswrord(user,password);
                     if(checkuser==true)
@@ -51,6 +57,7 @@ Button btnIniciarSesion;
                     {
                         Toast.makeText(MainLogin.this,"sus credenciales es incorrecto",Toast.LENGTH_SHORT).show();
                     }
+                     */
                 }
             }
         });

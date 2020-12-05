@@ -11,8 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.proyectofinal.homelife.network.services.LoginService;
 
 public class MainActivity extends AppCompatActivity {
+    MainActivity activity;
+    LoginService servicios;
 
     BottomNavigationView menuBotones;
 
@@ -21,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         asignarReferencias();
+
+        final MainActivity activity = this;
+        servicios = new LoginService(activity);
+
+        String token = servicios.mHomeLifePreference.getToken();
+        if (!token.equals("")) {
+            servicios.verify();
+        }
+
     }
 
     private void asignarReferencias() {
