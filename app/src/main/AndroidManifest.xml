@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.proyectofinal.homelife">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,24 +15,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeLife">
-        <activity android:name=".MainConfirmacionReserva"></activity>
-        <activity android:name=".MainPagoRealizado" />
+        <activity android:name=".ReservarConfirmacionActivity"></activity>
+        <activity android:name=".ReservarActivity" />
+        <activity android:name=".PagoConfirmacionActivity" />
         <activity
-            android:name=".MainMapa"
+            android:name=".LugaresActivity"
             android:label="Google Maps"
-            android:parentActivityName=".MainMenu" />
-        <activity android:name=".MainPago" />
+            android:parentActivityName=".MenuActivity" />
+        <activity android:name=".PagoActivity" />
         <activity
-            android:name=".MainMenu"
+            android:name=".MenuActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainRegistrar"
+            android:name=".RegistroActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EstadoCuenta"
+            android:name=".EstadoCuentaActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainLogin"
+            android:name=".LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

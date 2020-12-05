@@ -33,7 +33,7 @@ public class fragmento1 extends Fragment {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), MainLogin.class);
+                Intent intent = new Intent (v.getContext(), LoginActivity.class);
                 startActivityForResult(intent, 0);
             }
         });
@@ -41,7 +41,7 @@ public class fragmento1 extends Fragment {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), MainRegistrar.class);
+                Intent intent = new Intent (v.getContext(), RegistroActivity.class);
                 startActivityForResult(intent, 0);
             }
         });

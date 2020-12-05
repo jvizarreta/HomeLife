@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/degradadofondo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".MenuActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/calligraphy"
+        android:text="Residencial Homelife"
+        android:textColor="@color/homelife"
+        android:textSize="55dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegistrarPago"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:onClick="RegistrarPago"
+        android:text="Registrar Pago"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEstadoCuenta" />
+
+    <Button
+        android:id="@+id/btnEstadoCuenta"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:onClick="estado"
+        android:text="Estado de cuenta"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnReservas"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:onClick="reserva"
+        android:text="Reserva"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarPago" />
+
+    <Button
+        android:id="@+id/btnMapas"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:onClick="LugaresInteres"
+        android:text="Lugares de interes"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReservas" />
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/homelife"
+        android:fontFamily="@font/assassin"
+        android:onClick="LugaresInteres"
+        android:text="Cerrar Sesión"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMapas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

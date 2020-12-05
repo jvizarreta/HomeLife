@@ -24,55 +24,39 @@
                 android:padding="3dip" />
         </TableRow>
         <TableRow>
-
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="moneda" />
-
+                android:text="Moneda" />
             <TextView
+                android:id="@+id/txtMoneda2"
                 android:gravity="right"
                 android:padding="3dip"
-                android:id="@+id/txtMoneda" />
-
-
+                android:text="Soles"/>
         </TableRow>
-
         <TableRow>
-
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="Fecha" />
-
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
                 android:id="@+id/txtFecha" />
         </TableRow>
-
         <TableRow>
-
             <TextView
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="Monto" />
-
             <TextView
                 android:gravity="right"
                 android:padding="3dip"
                 android:id="@+id/txtMonto" />
         </TableRow>
-
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
-
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
-
-
     </TableLayout>
 
 

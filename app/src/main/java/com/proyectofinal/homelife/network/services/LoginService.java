@@ -11,9 +11,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.proyectofinal.homelife.LoginActivity;
 import com.proyectofinal.homelife.MainActivity;
-import com.proyectofinal.homelife.MainLogin;
-import com.proyectofinal.homelife.MainMenu;
+import com.proyectofinal.homelife.MenuActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,9 +21,9 @@ import org.json.JSONObject;
 public class LoginService extends Base {
     private AppCompatActivity activity;
 
-    public LoginService(MainLogin activity) {
+    public LoginService(LoginActivity activity) {
         super(activity.getApplicationContext());
-        this.activity = (MainLogin) activity;
+        this.activity = (LoginActivity) activity;
     }
     public LoginService(MainActivity activity) {
         super(activity.getApplicationContext());
@@ -51,7 +51,7 @@ public class LoginService extends Base {
                     e.printStackTrace();
                 }
 
-                activity.startActivity(new Intent(activity.getApplicationContext(), MainMenu.class));
+                activity.startActivity(new Intent(activity.getApplicationContext(), MenuActivity.class));
             }
         }, new Response.ErrorListener() {
             @Override
@@ -87,7 +87,7 @@ public class LoginService extends Base {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                activity.startActivity(new Intent(activity.getApplicationContext(), MainMenu.class));
+                activity.startActivity(new Intent(activity.getApplicationContext(), MenuActivity.class));
             }
         }, new Response.ErrorListener() {
             @Override
@@ -103,6 +103,6 @@ public class LoginService extends Base {
     public void logout(){
         Toast.makeText(context, "Sesión expirada.", Toast.LENGTH_SHORT).show();
         mHomeLifePreference.clear();
-        activity.startActivity(new Intent(activity.getApplicationContext(), MainLogin.class));
+        activity.startActivity(new Intent(activity.getApplicationContext(), LoginActivity.class));
     }
 }
