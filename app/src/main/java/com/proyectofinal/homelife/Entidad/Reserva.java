@@ -3,25 +3,26 @@ package com.proyectofinal.homelife.Entidad;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.time.DateTimeException;
 import java.util.Date;
 
 public class Reserva<DateTime> implements Parcelable {
     private int id;
-    private int idambiente;
+    private String ambiente;
     private DateTime  fecha;
     private int estadoautoriza;
     private int idusuario;
+ public Reserva(){
 
-    public Reserva(int	id,int idambiente,DateTime fecha,int estadoautoriza,int idusuario) {
+ }
+    public Reserva(int	id,String ambiente,DateTime fecha,int estadoautoriza,int idusuario) {
         this.id=id;
-        this.idambiente=idambiente;
+        this.ambiente=ambiente;
         this.fecha=fecha;
         this.estadoautoriza=estadoautoriza;
         this.idusuario=idusuario;
     }
-    public Reserva(int idambiente,DateTime fecha,int estadoautoriza,int idusuario) {
-        this.idambiente=idambiente;
+    public Reserva(String ambiente,DateTime fecha,int estadoautoriza,int idusuario) {
+        this.ambiente=ambiente;
         this.fecha=fecha;
         this.estadoautoriza=estadoautoriza;
         this.idusuario=idusuario;
@@ -30,7 +31,6 @@ public class Reserva<DateTime> implements Parcelable {
 
     protected Reserva(Parcel in) {
         id = in.readInt();
-        idambiente = in.readInt();
         estadoautoriza = in.readInt();
         idusuario = in.readInt();
     }
@@ -38,7 +38,7 @@ public class Reserva<DateTime> implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
-        dest.writeInt(idambiente);
+        dest.writeString(this.ambiente);
         dest.writeInt(estadoautoriza);
         dest.writeInt(idusuario);
     }
@@ -68,12 +68,12 @@ public class Reserva<DateTime> implements Parcelable {
         this.id = id;
     }
 
-    public int getIdambiente() {
-        return idambiente;
+    public String getambiente() {
+        return ambiente;
     }
 
-    public void setIdambiente(int idambiente) {
-        this.idambiente = idambiente;
+    public void setambiente(int idambiente) {
+        this.ambiente = ambiente;
     }
 
     public DateTime getFecha() {

@@ -63,8 +63,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
         String query4 =
                 "CREATE TABLE "+ Constantes.NOMBRE_TABLARESERVA+
                         " (id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                        " idambiente INTEGER NOT NULL,"+
-                        " fecha datetime NOT NULL,"+
+                        " ambiente TEXT NOT NULL,"+
+                        " fecha DATE NOT NULL,"+
                         " estadoautoriza INTEGER NOT NULL,"+
                         " idusuario INTEGER NOT NULL,"+
                         " FOREIGN KEY ("+ Constantes.FKUSER +") REFERENCES "+ Constantes.NOMBRE_TABLAUSUARIO +"("+Constantes.ID+"));";
@@ -80,6 +80,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
         db.execSQL(query5);
     }
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+
     }
 }

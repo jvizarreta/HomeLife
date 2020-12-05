@@ -4,20 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.proyectofinal.homelife.Entidad.Usuario;
 import com.proyectofinal.homelife.Modelo.DaoUsuario;
 
+import java.util.regex.Pattern;
+
 public class MainRegistrar extends AppCompatActivity {
 
+    EditText txtEmail,txtPassword;
+    Button btnRegistrar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_registrar);
+
     }
+
+
 
     public void onRegistrarUser(View view) {
         DaoUsuario userDao = new DaoUsuario(getApplicationContext());

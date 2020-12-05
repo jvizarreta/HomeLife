@@ -44,7 +44,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void reserva (View view){
-        Intent reserva = new Intent(this,Reserve.class);
+        Intent reserva = new Intent(this, Reserve.class);
         startActivity(reserva);
     }
 

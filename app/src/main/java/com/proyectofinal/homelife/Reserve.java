@@ -1,11 +1,13 @@
 package com.proyectofinal.homelife;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,75 +15,145 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
-public class Reserve extends AppCompatActivity {
+import com.proyectofinal.homelife.Entidad.Reserva;
+import com.proyectofinal.homelife.Entidad.Usuario;
+import com.proyectofinal.homelife.Modelo.DAOReserva;
+import com.proyectofinal.homelife.Modelo.DaoUsuario;
+import com.proyectofinal.homelife.Util.Constantes;
+import com.proyectofinal.homelife.Util.SqliteHelper;
+
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Reserve <DateTime> extends AppCompatActivity  {
     TextView tvDate;
-    EditText etDate;
+
+    EditText et_date;
+    Spinner spinner;
+    Button btnregis;
+    DAOReserva daoReserva = new DAOReserva(this);
+    String[] ambiente = {"Terraza", "Parrilla"};
+    boolean flag = false;
+    Reserva reserva = null;
+
     DatePickerDialog.OnDateSetListener setListener;
+    EditText t2;
+    private int mYearIni, mMonthIni, mDayIni, sYearIni, sMonthIni, sDayIni;
+    static final int DATE_ID = 0;
+    Calendar C = Calendar.getInstance();
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve);
 
-        /* Calendar calendar= Calendar.getInstance();
-        final int year = calendar.get(Calendar.YEAR);
-        final int month = calendar.get(Calendar.MONTH);
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
-        tvDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        Reserve.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth ,setListener,year,month,day);
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                datePickerDialog.show();
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            reserva = bundle.getParcelable(Constantes.ARGUM1);
+            flag = bundle.getBoolean(Constantes.ARGUM2);
+        }
+
+        spinner = findViewById(R.id.spinner);
+        et_date = findViewById(R.id.et_date);
+        btnregis = findViewById(R.id.btnregReser);
+
+        daoReserva.openDB();
+        ArrayAdapter<String> adapter;
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ambiente);
+        spinner.setAdapter(adapter);
+
+        if(flag){
+            //AcC
+            //et_date.setText(reserva.getFecha());
+
+            if(reserva.getambiente().equals("Terraza"))
+               spinner.setSelection(0);
+           else
+               spinner.setSelection(1);
+           btnregis.setVisibility(View.GONE);
+
+        }
+
+        btnregis.setOnClickListener(view ->{
+            String ambiente;
+            Date fecha;
+            Reserva reserva;
+            long rpta;
+
+            ambiente = spinner.getSelectedItem().toString();
+
+            reserva = new Reserva(ambiente, fecha);
+            rpta = daoReserva.agregarReserva(reserva);
+            if (rpta > 0){
+                Toast.makeText(this, "Se agregó el registro correctamente", Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(this, "Ocurrió un error", Toast.LENGTH_SHORT).show();
             }
+
+            finish();
+
         });
-        setListener  = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfmonth) {
-                month=month+1;
-                String date= day+"/"+month+"/"+year;
-                tvDate.setText(date);
-            }
-        };*/
-       /* etDate.setOnClickListener(new View.OnClickListener() {
+
+
+        sDayIni = C.get(Calendar.DAY_OF_MONTH);
+        sMonthIni = C.get(Calendar.MONTH);
+        sYearIni = C.get(Calendar.YEAR);
+
+
+        SqliteHelper sqliteHelper = new SqliteHelper(getApplicationContext());
+
+            
+
+        t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        Reserve.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        month=month+1;
-                        String date= day+"/"+month+"/"+year;
-                        etDate.setText(date);
-                    }
-                },year,month,day);
-                datePickerDialog.show();
-            }
-        });*/
-       /* final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        Button button=(Button)findViewById(R.id.button);
-        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-        List<String> categories = new ArrayList<String>();
-        categories.add("Item 1");
-        categories.add("Item 2");
-        categories.add("Item 3");
-        categories.add("Item 4");
-        categories.add("Item 5");
-        categories.add("Item 6");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
 
-    }*/
-   /* public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String item = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+                showDialog(DATE_ID);
+            }
+        });
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.ambiente_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
     }
-    public void onNothingSelected(AdapterView<?> arg0) {
-    }*/
+
+
+
+
+    private void colocar_fecha() {
+        t2.setText(mDayIni + "-" + (mMonthIni + 1) + "-" + mYearIni+" ");
     }
+
+
+
+    private DatePickerDialog.OnDateSetListener mDateSetListener =
+            new DatePickerDialog.OnDateSetListener() {
+                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    mYearIni = year;
+                    mMonthIni = monthOfYear;
+                    mDayIni = dayOfMonth;
+                    colocar_fecha();
+
+                }
+
+            };
+
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case DATE_ID:
+                return new DatePickerDialog(this, mDateSetListener, sYearIni, sMonthIni, sDayIni);
+
+
+        }
+
+
+        return null;
+    }
+
+
 }

@@ -2,13 +2,17 @@ package com.proyectofinal.homelife.Modelo;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import java.text.DateFormat;
 import java.time.DateTimeException;
 import java.util.Date;
 import com.proyectofinal.homelife.Entidad.Reserva;
+import com.proyectofinal.homelife.Entidad.Usuario;
 import com.proyectofinal.homelife.Util.Constantes;
 import com.proyectofinal.homelife.Util.SqliteHelper;
 import java.util.Date;
-public class DAOReserva {
+public class DAOReserva <DateTime> {
     SqliteHelper helper;
     SQLiteDatabase db;
     private final Context context;
@@ -22,6 +26,18 @@ public class DAOReserva {
     }
 
     public long agregarReserva(Reserva reserva){
+        try {
+            ContentValues values = new ContentValues();
+            values.put("ambiente",reserva.getambiente());
+            values.put("fecha", reserva.getFecha());
+            return db.insert(Constantes.NOMBRE_TABLARESERVA,null,values);
+            //return cursor;
+        }catch (Exception e){
+            return 0;
+        }
+    }
+
+    /*public long agregarReserva(Reserva reserva){
         //long cursor;
         try {
             ContentValues values = new ContentValues();
@@ -34,5 +50,9 @@ public class DAOReserva {
         }catch (Exception e){
             return 0;
         }
-    }
+    }*/
+
+
+
+
 }
